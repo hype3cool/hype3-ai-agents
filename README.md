@@ -1,7 +1,7 @@
 # Hype3 - Gamified APP (AI-Pump-Players) AI Agent Launch Protocol 🤖
 
 <div align="center">
-  <img src="https://x.com/HYPE3cool/header_photo" alt="Hype3 Banner" width="100%" />
+  <img src="https://pbs.twimg.com/profile_banners/1726493043921211392/1730791659/1500x500" alt="Hype3 Banner" width="100%" />
 </div>
 
 ## ✨ Features
