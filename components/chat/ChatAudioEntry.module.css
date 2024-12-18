@@ -1,0 +1,5 @@
+.username {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}

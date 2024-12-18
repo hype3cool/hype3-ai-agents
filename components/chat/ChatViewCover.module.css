@@ -1,0 +1,46 @@
+.hero-container {
+    width: 100%;
+    /* height: 100dvh; */
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    top: 0;
+    left: 0;
+    width: 100%;
+    filter: blur(5px) brightness(50%);
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    object-fit: cover;
+}
+
+.hero-container > div.backdrop {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 15%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 85%, rgb(0, 0, 0) 100%);
+    backdrop-filter: blur(2px);
+}
+
+.hero-container > div.content {
+    z-index: 5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; // dynamic css in code */      
+    justify-content: center;
+    color: white;
+    text-align: center;
+    /* padding: 1rem; */
+    /* color: #fff;
+    z-index: 1;
+    position: relative;
+    text-align: center; */
+}
