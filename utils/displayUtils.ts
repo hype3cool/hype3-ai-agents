@@ -169,7 +169,7 @@ export const showExplorer = (address: string) => {
     return `https://explorer.solana.com/address/${address}?cluster=${network}`;
 };
 
-const formatDate = (dateString: string) => {
+export const formatDate = (dateString: string) => {
     // Convert the date string from MongoDB to a Date object
     const date = new Date(dateString);
 
@@ -185,4 +185,12 @@ const formatDate = (dateString: string) => {
     };
 };
 
-export default formatDate;
+export const formatEarnedAmount = (earned: number) => {
+    if (earned < 1000 && earned > 500) {
+        return '<1k';
+    } else if (earned >= 1000) {
+        return `${Math.floor(earned / 1000)}k`;
+    } else {
+        return earned.toString(); // Return the exact number if it's 500 or less
+    }
+};

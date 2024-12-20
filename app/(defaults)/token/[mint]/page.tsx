@@ -35,6 +35,12 @@ import { CoinDataProvider } from '@/components/coin/CoinDataProvider';
 import axios from 'axios';
 import TokenWideCard from '@/components/token/TokenWideCard';
 import TokenProfileCard from '@/components/token/TokenProfileCard';
+import TokenPriceChart from '@/components/token/TokenPriceChart';
+import TwoLine from '@/components/elements/TwoLine';
+import IconLinkButton from '@/components/elements/buttons/IconLinkButton';
+import { showExplorer } from '@/utils/displayUtils';
+import SwapJupiterButton from '@/components/elements/buttons/SwapJupiterButton';
+import TwitterTimeline from '@/components/coin/elements/TwitterTimeline';
 
 type Props = {
     params: { mint: string };
@@ -104,7 +110,51 @@ export default async function Page({ params }: Props) {
         <div className="px-4 my-32">
             <div className="container mx-auto !max-w-[800px]">
                 <TokenProfileCard coin={coin} />
-                {/* <pre className="text-white">{JSON.stringify(coin, null, 4)}</pre> */}
+
+                {coin?.isCreated && (
+                    <div>
+                        <div className="grid grid-cols-4 md:grid-cols-6 gap-4 my-8">
+                            <div className="col-span-2 md:col-span-1">
+                                <TwoLine title="Market CAP" value="$69.5k" />
+                            </div>
+                            <div className="col-span-2 md:col-span-1">
+                                <TwoLine title="Vol (24H)" value="$12m" />
+                            </div>
+                            <div className="col-span-4 md:col-span-4">
+                                {coin?.mint && (
+                                    <div className="flex flex-row items-center space-x-5 justify-start md:justify-end">
+                                        <TwoLine title="CA" value={coin?.mint} />
+                                        <IconLinkButton icon="expand" url={showExplorer(coin.mint)} />
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+                        <TokenPriceChart mint={coin?.mint} />
+
+                        <div className="mt-8">
+                            {/* <SwapJupiterButton mint={coin?.mint} /> */}
+                            <button type="button" className="w-full h-[50px] bg-blue-200 rounded-lg">
+                                Click Me
+                            </button>
+                        </div>
+                    </div>
+                )}
+                {coin?.socials?.twitter?.url && (
+                    <div className="mt-8">
+                        <div className="w-full py-6  border-b border-slate-400/10 flex items-center justify-between">
+                            <div className=" flex items-center space-x-3.5">
+                                <span className="rounded-full w-3 h-3 bg-cyan-500 ripple cyan" />
+                                <div className="text-white text-lg font-medium font-figtree tracking-tight">Live Sentient Tweets</div>
+                            </div>
+
+                            {coin?.socials?.twitter?.url && <IconLinkButton icon="twitter" url={coin?.socials?.twitter?.url} />}
+                        </div>
+                        <div className="w-full h-full overflow-y-auto flex-grow">
+                            <TwitterTimeline username={coin?.socials?.twitter?.url?.split('/')[3] || ''} />
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
 

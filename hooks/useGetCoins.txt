@@ -1,0 +1,60 @@
+import { Coin } from '@/types/types';
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
+import { qs } from 'qs';
+import { COIN_FILTERS } from '@/constants/constants';
+
+export const getCoins = async (type: string, sortBy: string, sortDirection: string): Promise<Coin[]> => {
+    const params = new URLSearchParams();
+    if (type !== 'all') params.append(type, 'true');
+    if (sortBy) params.append('sortBy', sortBy);
+    if (sortDirection) params.append('sortDirection', sortDirection);
+
+    let queryString = qs.stringify(
+        {
+            sortBy,
+            sortDirection,
+        },
+        { encode: true },
+    );
+
+    let url = `${process.env.NEXT_PUBLIC_API_HOST}/coin`;
+
+    switch (type) {
+        case 'all':
+            url += `?${queryString}`;
+            break;
+        case 'presale':
+            url += `?${queryString}&isPresale=true`;
+            break;
+        case 'created':
+            url += `?${queryString}&isCreated=true`;
+            break;
+        default:
+            url += `?${queryString}`;
+    }
+
+    if (type === COIN_FILTERS.PRESALE_LIVE) {
+        url += `?${queryString}&isPresale=true`;
+    } else if (type === COIN_FILTERS.LP_CREATED) {
+        url += `?${queryString}&isCreated=true`;
+    } else {
+        url += `?${queryString}`;
+    }
+
+    try {
+        const { data } = await axios.get(url);
+        return data.data as Coin[];
+    } catch (error) {
+        console.error('Failed to fetch coins:', error);
+        return [];
+    }
+};
+
+export const useGetCoins = (type: string = 'all', sortBy: string = 'createdAt', sortDirection: string = 'asc') => {
+    return useQuery({
+        queryKey: ['coins', type, sortBy, sortDirection],
+        queryFn: () => getCoins(type, sortBy, sortDirection),
+        enabled: !!type,
+    });
+};

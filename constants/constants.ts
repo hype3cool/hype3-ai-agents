@@ -55,7 +55,7 @@ export const EmptyUser: User = {
 export const PAGE_LINKS = {
     HOME: '/',
     TOKEN: '/token',
-    TOKEN_CREATE: '/token-create',
+    TOKEN_CREATE: 'https://agent.hype3.cool',
 };
 
 export const DIALOG_NAMES = {
@@ -63,6 +63,10 @@ export const DIALOG_NAMES = {
     UPDATE_USERNAME: 'update-username',
     UPLOAD_IMAGE: 'upload-image',
     PRESALE: 'presale',
-}
+};
 
-
+export const COIN_FILTERS = {
+    NEW_AGENTS: '💥 New Agents',
+    LP_CREATED: '✅ LP Created',
+    PRESALE_LIVE: '🚀 Presale Live',
+};

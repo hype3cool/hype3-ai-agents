@@ -46,18 +46,20 @@ const TwitterButton = () => {
             <button
                 onClick={handleRemoveTwitter}
                 type="button"
-                className="h-[45px] p-3 bg-rose-400/10 rounded-[100px] border border-rose-400/20 justify-center items-center gap-3 inline-flex text-rose-400"
+                className="
+                min-w-[195px] h-[38px] p-1.5 bg-rose-400/10 rounded-[100px] border border-rose-400/20 justify-center items-center gap-1.5 inline-fle
+                inline-flex text-rose-400"
             >
-                <span className="icon-x-twitter text-sm pl-1.5" />
-                <div className="text-center text-base font-semibold font-figtree">Disconnect @${authUser?.twitter?.username}</div>
+                <span className="icon-x-twitter text-xs pl-1.5" />
+                <div className="text-center text-sm font-semibold font-figtree">Disconnect @${authUser?.twitter?.username}</div>
             </button>
         );
     }
 
     return (
-        <button onClick={handleConnectTwitter} type="button" className="w-[152px] h-[45px] p-3 bg-slate-400/10 rounded-[100px] justify-center items-center gap-1.5 inline-flex">
-            <div className="text-center text-white text-base font-semibold font-figtree">🔗 Connect</div>
-            <span className="icon-x-twitter text-white text-sm" />
+        <button onClick={handleConnectTwitter} type="button" className="w-[130px] h-[38px] h-button h-button-border p-1.5 bg-slate-400/10 rounded-[100px] justify-center items-center gap-1.5 inline-flex">
+            <div className="text-center text-white text-sm font-semibold font-figtree">🔗 Connect</div>
+            <span className="icon-x-twitter text-white text-xs" />
         </button>
     );
 };

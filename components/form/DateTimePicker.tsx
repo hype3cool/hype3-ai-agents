@@ -1,4 +1,3 @@
-// DateTimePicker.tsx
 import React from 'react';
 import { useFormContext, RegisterOptions } from 'react-hook-form';
 import { FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react';

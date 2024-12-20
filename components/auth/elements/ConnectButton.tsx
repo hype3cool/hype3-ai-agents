@@ -44,9 +44,9 @@ const ConnectButton = () => {
         <>
             {status === 'authenticated' && authUser ? (
                 <div className="hidden sm:flex flex-col-reverse sm:flex-row items-center gap-2">
-                    <div className="flex items-center sm:order-last" onClick={(e) => handleClick(e)}>
+                    <button type="button" className="flex items-center sm:order-last" onClick={(e) => handleClick(e)}>
                         {getMeStatus === 'loading' ? <Loading /> : <BaseAvatar image={authUser?.image} />}
-                    </div>
+                    </button>
                 </div>
             ) : (
                 <div className="hidden sm:block">

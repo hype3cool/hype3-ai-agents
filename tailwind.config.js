@@ -125,7 +125,7 @@ module.exports = {
                     900: '#231213',
                 },
                 rose: {
-                    400: '#FF6489',
+                    400: '#FF6389',
                 },
                 lemon: {
                     400: '#FAFF00',
@@ -150,11 +150,13 @@ module.exports = {
                 },
                 bluegray: {
                     400: '#00ffa3',
+                    500: '#94A3B8',
                 },
             },
             fontFamily: {
                 nunito: ['var(--font-nunito)'],
                 figtree: ['var(--font-figtree)'],
+                londrina: ['var(--font-londrina)'],
             },
             spacing: {
                 4.5: '18px',
@@ -164,6 +166,19 @@ module.exports = {
             },
             boxShadow: {
                 '3xl': '0 2px 2px rgb(224 230 237 / 46%), 1px 6px 7px rgb(224 230 237 / 46%)',
+            },
+            animation: {
+                border: 'border 4s linear infinite',
+                'spin-slow': 'spin 3s linear infinite',
+                'border-spin': 'border-spin 4s linear infinite',
+            },
+
+            keyframes: {
+                'border-spin': {
+                    '100%': {
+                        transform: 'rotate(360deg)',
+                    },
+                },
             },
         },
     },

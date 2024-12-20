@@ -72,7 +72,7 @@ export interface User {
     isNewUser?: boolean;
     isCreator?: boolean;
     isAdmin?: boolean;
-    email?: string;     // google email
+    email?: string; // google email
     oauthId?: string;
     oauthProvider?: string;
     twitter?: {
@@ -152,7 +152,6 @@ export interface Version {
     };
 }
 
-
 export interface CoinCreateForm {
     imageUri: string;
     name: string;
@@ -166,8 +165,7 @@ export interface CoinCreateForm {
     milestoneLongDescription: string;
     presaleEndAt: string;
     presaleStartAt: string;
-}   
-
+}
 
 export interface Coin {
     _id?: string | null;
@@ -183,15 +181,23 @@ export interface Coin {
     presaleEndAt: string;
     presaleStartAt?: string;
     // enablePresaleStartAt?: boolean;
-    isCreated: boolean;         // is token created
+    isCreated: boolean; // is token created
     createdAt?: Date;
     updatedAt?: Date;
 }
-
 
 export interface Milestone {
     seq: number;
     shortDescription: string;
     longDescription: string;
     updatedAt: Date;
+}
+
+export interface TempCreatorData {
+    name: string;
+    username: string;
+    image: string;
+    agentCount: number;
+    earned: number;
+    twitterUrl?: string;
 }

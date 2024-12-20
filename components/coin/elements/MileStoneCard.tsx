@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './MileStoneCard.module.css';
-import formatDate from '@/utils/displayUtils';
+import { formatDate } from '@/utils/displayUtils';
 import CircularBorder from '../elements/CircularBorder';
 import { Coin, Milestone } from '@/types/types';
 

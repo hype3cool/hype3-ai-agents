@@ -15,5 +15,5 @@ export class CoinService extends BaseService<CoinCreateForm> {
   async getCoinByMintAddress(mint: string) {
     const response = await this.axios.get(`${this.endpoint}?mint=${mint}`);
     return response.data;
-  } 
+  }
 }

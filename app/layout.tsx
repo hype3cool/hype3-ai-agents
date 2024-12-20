@@ -1,9 +1,8 @@
-
 import ProviderComponent from '@/components/layouts/ProviderComponent';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/tailwind.css';
 import { Metadata } from 'next';
-import { Figtree } from 'next/font/google';
+import { Figtree, Londrina_Solid } from 'next/font/google';
 
 import NextAuthProvider from '@/components/layouts/NextAuthProvider';
 import Script from 'next/script';
@@ -19,15 +18,15 @@ export const metadata: Metadata = {
         description: 'Create a free token pre-launch with auto refund below 85 $SOL raise. Trade on DEX with 100% funded to LP instantly.',
         url: 'https://hype3.cool',
         images: [
-          {
-            url:  `${process.env.NEXT_PUBLIC_HOST}/assets/images/hype3-full-logo.png?v=20241024`,
-            width: 256,
-            height: 256,
-            alt: 'Hype3',
-          },
+            {
+                url: `${process.env.NEXT_PUBLIC_HOST}/assets/images/hype3-full-logo.png?v=20241024`,
+                width: 256,
+                height: 256,
+                alt: 'Hype3',
+            },
         ],
         siteName: 'Hype3.Cool',
-      },
+    },
     icons: {
         icon: '/favicon.ico',
     },
@@ -39,12 +38,18 @@ export const metadata: Metadata = {
     },
 };
 
-
 const figtree = Figtree({
     weight: ['300', '400', '500', '600', '700', '800', '900'],
     subsets: ['latin', 'latin-ext'],
     display: 'swap',
     variable: '--font-figtree',
+});
+
+const londrina = Londrina_Solid({
+    weight: ['100', '300', '400', '900'],
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-londrina',
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -53,12 +58,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* <head>
                 <Script src="https://terminal.jup.ag/main-v3.js" data-preload />
             </head> */}
-            <body className={`${figtree.variable}`}>
+            <body className={`${figtree.variable} ${londrina.variable}`}>
                 <link rel="icon" href="/favicon.ico" sizes="any" />
                 <NextAuthProvider>
-                    <ProviderComponent>
-                        {children}
-                    </ProviderComponent>
+                    <ProviderComponent>{children}</ProviderComponent>
                 </NextAuthProvider>
             </body>
         </html>

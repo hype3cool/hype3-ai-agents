@@ -21,7 +21,6 @@ export default async function Page() {
 
     // If no session, redirect to home page
     if (!session) {
-        console.log('aksdj')
         redirect('/');
     }
 

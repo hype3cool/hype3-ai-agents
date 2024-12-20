@@ -1,10 +1,8 @@
 import React from 'react';
 
 import { Coin } from '@/types/types';
-import NoMilestoneDescription from './NoMilestoneDescription';
 import CoinDescription from './CoinDescription';
 import IconLinkButton from '@/components/elements/buttons/IconLinkButton';
-import CreationTimer from '@/components/elements/CreationTimer';
 
 type SoldCoinCardProps = {
     coin: Coin;

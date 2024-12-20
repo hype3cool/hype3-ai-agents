@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 
@@ -19,8 +18,7 @@ export default function ExploreNavItem() {
             {({ open }) => (
                 <>
                     <MenuButton className={`hype3-dropdown-btn ${open ? ' text-blue-200' : 'text-white/70'}`}>
-                        {/* <span className={`icon-arrow-down ${open && 'text-blue-200 rotate-180 transition-all'}`} /> */}
-                        Explorer
+                        Explore
                     </MenuButton>
                     <Transition
                         enter="duration-200 ease-out"
@@ -33,7 +31,6 @@ export default function ExploreNavItem() {
                         <MenuItems
                             anchor="bottom start"
                             className="relative origin-top transition mt-3 bg-black text-white min-w-[175px] rounded-[15px] shadow border border-white/20 z-50 pt-4 pb-7 px-7 space-y-4"
-                            
                         >
                             {menuItems.map((item, index) => (
                                 <MenuItem key={index}>
@@ -42,20 +39,6 @@ export default function ExploreNavItem() {
                                     </Link>
                                 </MenuItem>
                             ))}
-
-                            {/* <MenuItem>
-                                <div className="text-white/70 active:text-blue-200 font-semibold h5 px-4">
-                                    <div className="flex flex-row space-x-2 items-center">
-                                        <Link type="button" href="https://x.com/hype3trade" target="_blank" className="hype3-btn-primary-ghost">
-                                            <span className="icon-x-twitter"></span>
-                                        </Link>
-
-                                        <Link type="button" href="https://t.me/HYPE3support" target="_blank" className="hype3-btn-primary-ghost">
-                                            <span className="icon-telegram-no-bg"></span>
-                                        </Link>
-                                    </div>
-                                </div>
-                            </MenuItem> */}
                         </MenuItems>
                     </Transition>
                 </>

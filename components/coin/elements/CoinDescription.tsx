@@ -39,7 +39,7 @@ const CoinDescription = ({ description, expandable = false }: CoinDescriptionPro
         <div className="flex flex-col">
             <div 
                 ref={contentRef}
-                className="base-white text-sm font-semibold transition-all duration-300"
+                className="text-white/70 text-sm font-medium font-figtree transition-all duration-300"
                 dangerouslySetInnerHTML={{ __html: description }}
             />
             {showMoreButton && expandable && (

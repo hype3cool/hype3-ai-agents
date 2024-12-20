@@ -1,0 +1,11 @@
+.lottieGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.lottieGroup__Inline {
+    padding: 34px 0 24px;
+}

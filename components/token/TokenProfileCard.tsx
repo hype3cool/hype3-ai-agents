@@ -10,7 +10,8 @@ type TokenProfileCardProps = {
 
 const TokenProfileCard = ({ coin }: TokenProfileCardProps) => {
     return (
-        <div className="relative bg-slate-400/5 rounded-lg shadow-inner border border-slate-400/20">
+        <div className="relative bg-slate-400/5 rounded-lg shadow-[inset_0px_3px_5.400000095367432px_-2px_rgba(255,255,255,0.04)] border border-slate-400/20 overflow-hidden">
+
             <div className="flex flex-col px-[28px] py-[30px] space-y-5">
                 <div className="flex flex-item space-x-[30px]">
                     <img className="w-[180px] h-[180px] rounded-xl shadow border-2 border-blue-200" src={coin?.imageUri} />
@@ -29,7 +30,7 @@ const TokenProfileCard = ({ coin }: TokenProfileCardProps) => {
                         </div>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <div className="flex justify-between flex-grow">
                         <div className="flex flex-col">
                             <div className=" text-blue-200 text-[10px] font-bold uppercase font-figtree leading-snug tracking-tight">Market CAP</div>
@@ -52,7 +53,7 @@ const TokenProfileCard = ({ coin }: TokenProfileCardProps) => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

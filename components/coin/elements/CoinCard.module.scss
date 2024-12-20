@@ -1,0 +1,45 @@
+/* Act as a border */
+.card-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem; /* equivalent to rounded-lg */
+}
+
+/* Gradient */
+.card-wrapper::before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    height: 200%;
+    width: 200%;
+    background: conic-gradient(rgb(15, 255, 163) 0deg, rgb(6, 200, 246) 120deg, rgb(236, 132, 255) 240deg);
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+
+/* Trigger animation on hover */
+.card-wrapper:hover::before {
+    animation: border-spin 5s linear infinite;
+}
+
+/* Body */
+.card-content {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    border-radius: 0.5rem; /* equivalent to rounded-lg */
+    background-color: black;
+}
+
+/* Keyframes for border spin animation */
+@keyframes border-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

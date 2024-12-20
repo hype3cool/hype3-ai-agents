@@ -44,11 +44,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             if (ready && authenticated) {
                 signUp();
             }
-        } else {
-            if (status == 'authenticated') {
-                dispatch(getMe());
-            }
         }
+        // else {
+        //     if (status == 'authenticated') {
+        //         // dispatch(getMe());
+        //     }
+        // }
     }, [ready, status, authenticated]);
 
     // nextauth signup with privy token to backend
@@ -114,10 +115,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }
     }, [ready, authenticated]);
 
-    // get me (user profile)
     useEffect(() => {
         if (session?.user?.id && status === 'authenticated') {
-            console.log('getMe');
             dispatch(getMe());
         }
     }, [session?.user?.id, status]);
@@ -131,7 +130,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     useEffect(() => {
         if (authUser?.isNewUser) {      // if new user , show new user dialog to ask for username
-            // router.push('/');
+            router.push('/');
             dispatch(setMainDialog({ open: true, type: 'new-user', data: authUser }));
         }
     }, [authUser, status]);

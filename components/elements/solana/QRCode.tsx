@@ -14,6 +14,15 @@ const QRCode = ({ address }: QRCodeProps) => {
             bgColor={'#03e1ff'}
             fgColor={'#000000'}
             level={'L'}
+            // imageSettings={{
+            //     src: 'https://d331cb3ys3pcfc-v3uat.hype3.cool/assets/images/hype3-full-logo.png',
+            //     x: undefined,
+            //     y: undefined,
+            //     height: 50,
+            //     width: 50,
+            //     opacity: 1,
+            //     excavate: true,
+            // }}
         />
     );
 };

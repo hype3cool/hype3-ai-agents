@@ -14,7 +14,7 @@ export default function Page() {
         <Suspense fallback={<div>Loading...</div>}>
             <ChatClientProvider>
                 <ChatRoomProvider roomId="hype3">
-                    <div className="px-4 my-32">
+                    <div className="px-4 mt-16 mb-32">
                         <div className="container mx-auto !max-w-[1440px]">
                             <HomePageContainer />
                         </div>

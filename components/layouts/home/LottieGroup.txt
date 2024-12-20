@@ -1,0 +1,134 @@
+import React from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
+const LottieGroup = () => {
+    return (
+        <div className="absolute flex justify-center items-center w-full h-full">
+            <div className="rotate-[5.20deg] absolute" style={{ left: '8%', top: '40%' }}>
+                <Card2 lottieUrl="xURXx4yW7o" index={1}>
+                    <>
+                        <span className="text-blue-200 text-3xl font-normal font-londrina">CONNECT</span>
+                        <span className="text-white text-3xl font-normal font-londrina">
+                            {' '}
+                            TO BECOME
+                            <br />
+                        </span>
+                        <span className="text-blue-200 text-3xl font-normal font-londrina">DEV + CREATOR</span>
+                    </>
+                </Card2>
+            </div>
+
+            <div className="rotate-[5.196deg] absolute" style={{ left: '64%'}}>
+                <Card2 lottieUrl="MvQsF7RPs2" index={3}>
+                    <>
+                        <span className="text-blue-200 text-3xl font-normal font-londrina">EARN</span>
+                        <span className="text-white text-3xl font-normal font-londrina"> ROYALTY AS </span>
+                        <span className="text-blue-200 text-3xl font-normal font-londrina">CREATOR</span>
+                    </>
+                </Card2>
+            </div>
+            <div className="rotate-[-8.13deg] absolute">
+                <Card2 lottieUrl="ops1BqFroK" index={2}>
+                    <>
+                        <span className="text-blue-200 text-3xl font-normal font-londrina">CREATE</span>
+                        <span className="text-white text-3xl font-normal font-londrina"> A NEW</span>
+                        <span className="text-blue-200 text-3xl font-normal font-londrina">
+                            {' '}
+                            IP AGENT
+                            <br />
+                        </span>
+                    </>
+                </Card2>
+            </div>
+        </div>
+        // <div className="w-full h-[400px] relative overflow-hidden mx-auto">
+        //     <div className="origin-top-left rotate-[5.20deg] w-[421.01px] h-[190.71px] left-[1158.27px] top-[139px] absolute lottie-card">
+        //         <div className="w-[413px] h-[150px] left-[6.79px] top-[20px] absolute origin-top-left rotate-[8.20deg] bg-black rounded-[20px] shadow-[0px_0px_10px_2px_rgba(3,225,255,0.10)] border border-blue-200/50">
+        // <div className="relative flex flex-row items-center p-5">
+        //     <div className="h-24 w-[120px]">
+        //         <DotLottieReact src="/assets/images/MvQsF7RPs2.lottie" loop autoplay />
+        //     </div>
+        // <div className="origin-top-left  text-center">
+        //     <span className="text-blue-200 text-3xl font-normal font-londrina">EARN</span>
+        //     <span className="text-white text-3xl font-normal font-londrina"> ROYALTY AS </span>
+        //     <span className="text-blue-200 text-3xl font-normal font-londrina">CREATOR</span>
+        // </div>
+        // </div>
+        //         </div>
+
+        //         <div className="w-[45px] h-[45px] left-0 top-0 absolute origin-top-left rotate-[5.20deg] bg-black rounded-full border border-blue-200/50" />
+
+        //         <div className="left-[16.41px] top-[13.50px] absolute origin-top-left rotate-[8.20deg] text-center text-blue-200 text-2xl font-normal font-londrina leading-snug tracking-wide flex items-center justify-center">
+        //             3
+        //         </div>
+        //     </div>
+        //     <div className="w-[421.01px] h-[190.71px] left-[343px] top-[168px] absolute lottie-card">
+        //         <div className="w-[413px] h-[150px] left-[8.57px] top-[19.30px] absolute origin-top-left rotate-[3deg] bg-black rounded-[20px] shadow-[0px_0px_10px_2px_rgba(3,225,255,0.10)] border border-blue-200/50" />
+        //         <div className="relative flex flex-row items-center p-5">
+        //             <div className="h-24 w-[120px]">
+        //                 <DotLottieReact src="/assets/images/xURXx4yW7o.lottie" loop autoplay />
+        //             </div>
+        //             <div className="origin-top-left  text-center">
+        // <span className="text-blue-200 text-3xl font-normal font-londrina">CONNECT</span>
+        // <span className="text-white text-3xl font-normal font-londrina">
+        //     {' '}
+        //     TO BECOME
+        //     <br />
+        // </span>
+        // <span className="text-blue-200 text-3xl font-normal font-londrina">DEV + CREATOR</span>
+        //             </div>
+        //         </div>
+
+        //         <div className="w-[45px] h-[45px] left-0 top-0 absolute bg-black rounded-full border border-blue-200/50" />
+        //         <div className="left-[17.58px] top-[11.78px] absolute origin-top-left rotate-3 text-center text-blue-200 text-2xl font-normal font-londrina leading-snug tracking-wide">1</div>
+        //     </div>
+        //     <div className="origin-top-left rotate-[-8.13deg] w-[421.01px] h-[190.71px] left-[729px] top-[159.54px] absolute lottie-card">
+        //         <div className="w-[413px] h-[150px] left-[11.22px] top-[17.90px] absolute origin-top-left rotate-[-5.13deg] bg-black rounded-[20px] shadow-[0px_0px_10px_2px_rgba(3,225,255,0.10)] border border-blue-200/50" />
+
+        //         <div className="relative flex flex-row items-center p-5">
+        //             <div className="h-24 w-[120px]">
+        //                 <DotLottieReact src="/assets/images/ops1BqFroK.lottie" loop autoplay />
+        //             </div>
+        //             <div className="origin-top-left  text-center">
+        // <span className="text-blue-200 text-3xl font-normal font-londrina">CREATE</span>
+        // <span className="text-white text-3xl font-normal font-londrina"> A NEW</span>
+        // <span className="text-blue-200 text-3xl font-normal font-londrina">
+        //     {' '}
+        //     IP AGENT
+        //     <br />
+        // </span>
+        //             </div>
+        //         </div>
+
+        //         <div className="w-[45px] h-[45px] left-0 top-0 absolute origin-top-left rotate-[-8.13deg] bg-black rounded-full border border-blue-200/50" />
+        //         <div className="left-[19.08px] top-[9.35px] absolute origin-top-left rotate-[-5.13deg] text-center text-blue-200 text-2xl font-normal font-londrina leading-snug tracking-wide">2</div>
+        //     </div>
+        // </div>
+    );
+};
+
+export default LottieGroup;
+
+
+interface Card2Props {
+    lottieUrl: string;
+    children?: React.ReactNode; // Add children prop
+    index?: number;
+}
+const Card2 = ({ lottieUrl, children, index }: Card2Props) => {
+    return (
+        <div className="relative w-[413px] h-[150px] bg-black rounded-[20px] shadow-[0px_0px_10px_2px_rgba(3,225,255,0.10)] border border-blue-200/50">
+            <div className="absolute left-[-10px] top-[-20px] w-[45px] h-[45px] bg-black rounded-full border border-blue-200/50 flex items-center justify-center text-blue-200 text-2xl font-normal font-londrina leading-snug tracking-wide">
+                {index}
+            </div>
+            <div className="relative flex flex-row items-center p-5">
+                <div className="h-24 w-[120px]">
+                    <DotLottieReact src={`/assets/images/${lottieUrl}.lottie`} loop autoplay />
+                </div>
+                <div className="origin-top-left  text-center">{children}</div>
+            </div>
+        </div>
+    );
+};
+
+

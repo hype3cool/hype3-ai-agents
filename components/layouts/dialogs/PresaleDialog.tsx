@@ -24,6 +24,7 @@ import { MINIMUM_WEB2_BALANCE } from '@/constants/constants';
 import { useSession } from 'next-auth/react';
 import ConfirmDialog from '@/components/elements/dialogs/ConfirmDialog';
 
+
 const schema = yup.object().shape({
     amount: yup.number().typeError('Amount must be a number').positive('Amount must be positive').required('Amount is required'),
 });
@@ -106,8 +107,6 @@ const PresaleDialog = ({ coin }: PresaleDialogProps) => {
         reset(); // Reset the form after submission
         setIsOpen(false); // Close the dialog
     };
-
-    console.log({ coin });
 
     return (
         <div className="w-full pl-7 pr-6 pt-9 pb-6 bg-black rounded-lg shadow border border-blue-200/10">

@@ -155,7 +155,7 @@ export function createCoin(data: any) {
     };
 }
 
-export function getAllCoins(data: { chain?: string; verfied?: boolean; hideSoldOut?: boolean; showRugged?: boolean; sortBy?: string; page?: number; limit?: number; sortDirection?: string }) {
+export function getAllCoins(data: { type?: string, sortBy?: string; page?: number; limit?: number; sortDirection?: string }) {
     return async (dispatch: any, getState: any) => {
         dispatch(slice.actions.getAllCoinsStart());
         try {

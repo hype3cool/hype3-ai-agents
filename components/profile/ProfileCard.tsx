@@ -3,9 +3,8 @@ import React from 'react';
 const ProfileCard = () => {
     return (
         // bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70
-        <div
-            className="flex flex-col border border-slate-400/10 rounded-tl-lg rounded-tr-lg rounded-bl-[18px] rounded-br-[18px]">
-                <div className="relative w-full h-60 bg-gradient-to-b from-black to-black rounded-tl-lg rounded-tr-lg">
+        <div className="flex flex-col border border-slate-400/10 rounded-tl-lg rounded-tr-lg rounded-bl-[18px] rounded-br-[18px]">
+            <div className="relative w-full h-60 bg-gradient-to-b from-black to-black rounded-tl-lg rounded-tr-lg">
                 <img
                     className="w-full h-auto rounded-tl-lg rounded-tr-lg"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/7aa177dcfdaed3041daa49a0faaf5ce5189065d1b6932b8696e9a3706865cdc5?placeholderIfAbsent=true&apiKey=20766fa84f9a4404961ff5304dbabdcf"
@@ -41,6 +40,11 @@ const ProfileCard = () => {
                         <div>
                             <span className="text-white text-base font-bold font-figtree">$15,508 </span>
                             <span className="text-slate-400/60 text-base font-bold font-figtree">(233 SOL)</span>
+                        </div>
+                        <div>
+                            <div className="w-[86px] h-[38px] p-1.5 bg-slate-400/10 rounded-[100px] justify-center items-center gap-1.5 inline-flex">
+                                <div className="text-center text-white text-sm font-semibold font-['Figtree']">💰 Claim</div>
+                            </div>
                         </div>
                     </div>
                 </div>

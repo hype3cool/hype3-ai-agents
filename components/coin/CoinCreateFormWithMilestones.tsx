@@ -34,8 +34,8 @@ const schema = yup.object().shape({
     twitter: yup.string().url(),
     telegram: yup.string().url(),
     discord: yup.string().url(),
-    milestoneShortDescription: yup.string().required('1st Milestone - Short Description is required'),
-    milestoneLongDescription: yup.string().required('1st Milestone - Long Description is required'),
+    // milestoneShortDescription: yup.string().required('1st Milestone - Short Description is required'),
+    // milestoneLongDescription: yup.string().required('1st Milestone - Long Description is required'),
     presaleEndAt: yup.string().required('Presale End Time is required'), // datepicker
     enablePresaleStartAt: yup.boolean(),
     presaleStartAt: yup.string().when('enablePresaleStartAt', ([enablePresaleStartAt], schema) => {
@@ -60,8 +60,8 @@ const CoinCreateFormWithMilestones = () => {
             twitter: '',
             telegram: '',
             discord: '',
-            milestoneShortDescription: '',
-            milestoneLongDescription: '',
+            // milestoneShortDescription: '',
+            // milestoneLongDescription: '',
             presaleEndAt: '',
             presaleStartAt: '',
             enablePresaleStartAt: false,
@@ -71,10 +71,10 @@ const CoinCreateFormWithMilestones = () => {
 
     const onSubmit = async (formData: any) => {
         if (authUser) {
-            if (!authUser?.twitter || !authUser?.twitter?.username) {
-                showMessage('Please verified your personal twitter account before submission', 'error');
-                return;
-            }
+            // if (!authUser?.twitter || !authUser?.twitter?.username) {
+            //     showMessage('Please verified your personal twitter account before submission', 'error');
+            //     return;
+            // }
 
             // check if image is uploaded if not , show error
             if (!formData.imageUri) {

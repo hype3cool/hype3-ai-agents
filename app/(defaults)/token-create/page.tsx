@@ -45,7 +45,6 @@ export default async function Page() {
                         </li> */}
                     </ul>
                 </div>
-
                 {process.env.NEXT_PUBLIC_ENV === 'prod' ? <CoinCreateForm /> : <CoinCreateFormWithMilestones />}
             </main>
         </div>

@@ -1,3 +1,4 @@
+import { COIN_FILTERS } from '@/constants/constants';
 import React from 'react';
 
 type FilterButtonProps = {
@@ -21,16 +22,22 @@ const FilterButton = ({ text, isSelected, onClick }: FilterButtonProps) => {
 
 type TokenFilterButtonGroupProps = {
     selectedButton: string;
-    setSelectedButton: (button: string) => void;
+    setSelectedButton: (value: string) => void;
 };
 
 const TokenFilterButtonGroup = ({ selectedButton, setSelectedButton }: TokenFilterButtonGroupProps) => {
-    const buttons = [{ text: '💥 New Agents' }, { text: '✅ LP Created' }, { text: '🚀 Presale Live' }];
+    // const buttons = [{ text: COIN_FILTERS.NEW_AGENTS }, { text: COIN_FILTERS.LP_CREATED }, { text: COIN_FILTERS.PRESALE_LIVE }];
+
+    const options = [
+        { name: '💥 New Agents', value: 'all' },
+        { name: '✅ LP Created', value: 'created' },
+        { name: '🚀 Presale Live', value: 'presale' },
+    ];
 
     return (
         <div className="mb-16 flex flex-row space-x-[14px] overflow-x-auto">
-            {buttons.map((button) => (
-                <FilterButton key={button.text} text={button.text} isSelected={selectedButton === button.text} onClick={() => setSelectedButton(button.text)} />
+            {options.map((option) => (
+                <FilterButton key={option.value} text={option.name} isSelected={selectedButton === option.value} onClick={() => setSelectedButton(option.value)} />
             ))}
         </div>
     );

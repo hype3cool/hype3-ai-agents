@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { useFormContext, RegisterOptions } from 'react-hook-form';
 import { FormControl, FormLabel, Input, FormErrorMessage } from '@chakra-ui/react';
 
@@ -13,7 +13,7 @@ interface InputFieldProps {
     prefix?: string; // Optional prefix prop
 }
 
-const InputField = forwardRef<HTMLInputElement, InputFieldProps>(({
+const InputField: React.FC<InputFieldProps> = ({ 
     label,
     name,
     type = 'text',
@@ -22,7 +22,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(({
     isRequired,
     labelClassName = '',
     prefix = '',
-}, ref) => {
+}) => {
     const {
         register,
         setValue,
@@ -45,7 +45,6 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(({
                 {...register(name)} // Register with validation options
                 type={type}
                 id={name}
-                ref={ref}
                 placeholder={placeholder}
                 className="input active:border-none input-secondary w-full bg-black rounded-[18px] border-white/20 text-white text-sm font-semibold leading-tight tracking-normal placeholder:text-white/50"
                 sx={{
@@ -72,6 +71,6 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(({
             )}
         </FormControl>
     );
-});
+}
 
 export default InputField;

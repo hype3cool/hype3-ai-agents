@@ -15,7 +15,6 @@ type AuthUserProfileCardProps = {
 };
 
 const AuthUserProfileCard = ({ user }: AuthUserProfileCardProps) => {
-
     const { data: session, status } = useSession();
     const { authUser, getMeStatus } = useSelector((state: IRootState) => state.auth);
 
@@ -30,13 +29,13 @@ const AuthUserProfileCard = ({ user }: AuthUserProfileCardProps) => {
         dispatch(setMainDialog({ type: DIALOG_NAMES.UPLOAD_IMAGE, data: {} }));
     };
 
-    const [avatar, setAvatar] = React.useState<string>(user?.image || "");
+    const [avatar, setAvatar] = React.useState<string>(user?.image || '');
 
     useEffect(() => {
         if (isAuthUser && getMeStatus === 'success') {
-            setAvatar(authUser?.image || "");
+            setAvatar(authUser?.image || '');
         }
-     },[isAuthUser, getMeStatus])
+    }, [isAuthUser, getMeStatus]);
 
     return (
         // bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70
@@ -60,12 +59,14 @@ const AuthUserProfileCard = ({ user }: AuthUserProfileCardProps) => {
                     </div>
                 </div>
 
-                <div className="right-[28px] bottom-[19px] absolute">
-                    <div className="flex items-center gap-x-2">
-                        <span className="icon-warning text-white/70 text-base" />
-                        <div className="text-white/70 text-sm font-semibold font-figtree tracking-tight">This creator has yet claimed the profile</div>
+                {user?.isCreator && !user?.twitter && (
+                    <div className="right-[28px] bottom-[19px] absolute">
+                        <div className="flex items-center gap-x-2">
+                            <span className="icon-warning text-white/70 text-base" />
+                            <div className="text-white/70 text-sm font-semibold font-figtree tracking-tight">This creator has yet claimed the profile</div>
+                        </div>
                     </div>
-                </div>
+                )}
 
                 {/* <div className="left-[100px] absolute">
                 <div className="text-white text-base font-semibold font-figtree leading-tight tracking-tight">testinguser</div>
@@ -91,12 +92,17 @@ const AuthUserProfileCard = ({ user }: AuthUserProfileCardProps) => {
                             </div>
                         </div>
                     )}
-                    <div className="text-right">
-                        <div className=" text-blue-200 text-[10px] font-bold font-figtree uppercase leading-snug tracking-tight">TOTAL EARNINGS</div>
+                    <div className="text-right flex items-center space-x-3.5">
                         <div>
-                            <span className="text-white text-base font-bold font-figtree">$15,508 </span>
-                            <span className="text-slate-400/60 text-base font-bold font-figtree">(233 SOL)</span>
+                            <div className=" text-blue-200 text-[10px] font-bold font-figtree uppercase leading-snug tracking-tight">TOTAL EARNINGS</div>
+                            <div>
+                                <span className="text-white text-base font-bold font-figtree">$15,508 </span>
+                                <span className="text-slate-400/60 text-base font-bold font-figtree">(233 SOL)</span>
+                            </div>
                         </div>
+                        <button type="button" className="w-[86px] h-button h-button-border h-[38px] min-h-[38px] p-1.5 bg-slate-400/10 gap-1.5 inline-flex" onClick={() => {}}>
+                            <div className="text-center text-white text-sm font-semibold font-figtree">💰 Claim</div>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -61,27 +61,27 @@ const ProfileTable = () => {
                                             <div className="flex item-center space-x-4">
                                                 <Link href="#">
                                                     <button type="button">
-                                                        <span className="icon-x-twitter text-blue-200 text-xl mr-2" />
+                                                        <span className="icon-x-twitter text-blue-200 text-base mr-2" />
                                                     </button>
                                                 </Link>
                                                 <Link href="#">
                                                     <button type="button">
-                                                        <span className="icon-telegram-no-bg text-blue-200 text-xl mr-2" />
+                                                        <span className="icon-telegram-no-bg text-blue-200 text-base mr-2" />
                                                     </button>
                                                 </Link>
                                                 <Link href="#">
                                                     <button type="button">
-                                                        <span className="icon-discord text-blue-200 text-xl mr-2" />
+                                                        <span className="icon-discord text-blue-200 text-base mr-2" />
                                                     </button>
                                                 </Link>
                                                 <Link href="#">
                                                     <button type="button">
-                                                        <span className="icon-globe text-blue-200 text-xl mr-2" />
+                                                        <span className="icon-globe text-blue-200 text-base mr-2" />
                                                     </button>
                                                 </Link>
                                                 <Link href="#">
                                                     <button type="button">
-                                                        <span className="icon-expand text-blue-200 text-xl mr-2" />
+                                                        <span className="icon-expand text-blue-200 text-base mr-2" />
                                                     </button>
                                                 </Link>
                                             </div>
